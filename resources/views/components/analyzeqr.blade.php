@@ -2,7 +2,7 @@
             bg-white/30 backdrop-blur-lg
             sm:w-256 sm:h-64 w-90 h-64  pl-2 pr-2 rounded-2xl
             border border-white/20 shadow-lg" x-show="analyze" x-transition>
-    <form action="">
+    <form action="/analyze/" method="get">
         <nav class="flex justify-between items-center justify-items-center ">
             <h1 class="text-2xl p-3 font-semibold">Akses Dashboard Qr</h1>
             <svg @click="analyze = false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -11,9 +11,16 @@
             </svg>
 
         </nav>
-        <input type="text" placeholder="Masukan Token" class="sm:w-128 w-72  ml-3 mr-3 focus:outline-0 border-b mt-3">
+        <input type="text" placeholder="Masukan Token" class="sm:w-128 w-72  ml-3 mr-3 focus:outline-0 border-b mt-3" name="token">
+        @if(session('notfound'))
+        <div class="alert alert-danger pl-3 pt-2">
+                <ul>
+                    <li class="text-xs text-red-500">{{ session('notfound')}}</li> 
+                </ul>
+            </div>
+        @endif
         <div class="pl-3 pt-5">
-        <button class="font-semibold underline">Masuk</button>
+        <button type="submit" class="font-semibold underline">Masuk</button>
         </div>
     </form>
 </div>

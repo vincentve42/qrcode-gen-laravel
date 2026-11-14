@@ -10,7 +10,7 @@
     <div class="mt-65 text-center">
         <h1 class="text-6xl  font-semibold">404</h1>
         <h1 class="text-3xl font-semibold">Not Found</h1>
-        <p>Url tidak valid <a class="text-blue-500 underline" href="">klik disini</a></p>
+        <p>Url tidak valid <a class="text-blue-500 underline" href="/">klik disini</a></p>
     </div>
 </body>
 </html>

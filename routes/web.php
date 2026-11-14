@@ -15,3 +15,5 @@ Route::get('/generate-qr', [QrController::class, 'generateQr'])->name('generateQ
 Route::get('/qr/{token}', [QrController::class, 'analyzeQr']);
 
 Route::get('/url/{url}', [UrlController::class, 'redirectUrl']);
+
+Route::get('/analyze/', [QrController::class, 'analyzeQrPortal']);

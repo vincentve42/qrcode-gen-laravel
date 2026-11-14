@@ -24,7 +24,7 @@
             @endif
         <div class="pl-3 pt-5">
            
-        <button class="font-semibold underline">Generate</button>
+        <button type="submit" class="font-semibold underline">Generate</button>
         </div>
     </form>
 </div>

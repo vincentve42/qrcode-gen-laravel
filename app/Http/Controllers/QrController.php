@@ -37,4 +37,16 @@ class QrController extends Controller
         }
         
     }
+    public function analyzeQrPortal(Request $request)
+    {
+        $qr = Qr::where('token', $request['token'])->first();
+        if($qr == null)
+        {
+            session(['notfound' => "Token tidak valid"]);
+            return redirect()->route('home');
+        }
+        else{
+            return redirect('/qr/'.$qr['token']);
+        }
+    }
 }
