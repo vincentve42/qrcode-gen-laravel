@@ -10,9 +10,13 @@
 </head>
 <body x-data="{createqr: false, analyze : false}">
    <x-navbar></x-navbar>
+    <div class="justify-self-center pt-5">
+       <h1 class="text-center text-2xl font-semibold">URL</h1>
+        <h1 class="text-center text-2xl font-semibold">{{ $qr['redirect'] }}</h1>
+    <img src="{{route('generateQr', ['slug' => $qr['url']])}}" alt="">
 
-    <img src="{{  }}" alt="">
-
+    
+    </div>
     <x-create-qr></x-create-qr>
     <x-analyzeqr></x-analyzeqr>
 </body>

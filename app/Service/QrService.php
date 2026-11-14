@@ -22,11 +22,13 @@ class QrService{
         $qr->setClick(0);
 
         $qr->save();
+
+        return redirect('/qr/' . $qr['token']);
     
     }
     public function generateQr($slug)
     {
-        $builder = new Builder(writer: new PngWriter(), size : 300, margin:10, data:$slug);
+        $builder = new Builder(writer: new PngWriter(), size : 300, margin:10, data:config('app.url') . "/url/".$slug);
        
         $result = $builder->build();
 
